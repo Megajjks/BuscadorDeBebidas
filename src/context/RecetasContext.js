@@ -18,14 +18,13 @@ const RecetasProvider = (props) => {
         const res = await axios.post(url);
         setRecetas(res.data.drinks);
         setConsultar(false);
-        console.log(res.data.drinks);
       };
       findRecetas();
     }
   }, [busqueda]);
 
   return (
-    <RecetasContext.Provider value={{ buscarRecetas, setConsultar }}>
+    <RecetasContext.Provider value={{ recetas, buscarRecetas, setConsultar }}>
       {props.children}
     </RecetasContext.Provider>
   );
